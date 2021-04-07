@@ -5,12 +5,13 @@ The election it was created for was a congressional race in Colorado, but this c
 This is not a vote counting machine, but instead takes the data from voting machines and double checks the results. 
 ## Election Audit Results
 * Total Votes Cast: 369,711
-  * `# Initialize a total vote counter.`
+  
+  `# Initialize a total vote counter.`
     `total_votes = 0`
-    `# For each row in the CSV file.
-    `for row in reader:
-        `# Add to the total vote count
-        `total_votes = total_votes + 1
+    `# For each row in the CSV file.`
+    `for row in reader:`
+        `# Add to the total vote count`
+        `total_votes = total_votes + 1`
 
 * Votes by County: 
   * County Votes:
@@ -18,11 +19,12 @@ This is not a vote counting machine, but instead takes the data from voting mach
     * Denver: 82.8% (306,055)
     * Arapahoe: 6.7% (24,801)
 * Largest County Turn Out: Denver
-    `for county_name in votes_by_county:
-        `# 6b: Retrieve the county vote count.
-       ` county_votes = votes_by_county.get(county_name)
-       ` # 6c: Calculate the percentage of votes for the county.
-       ` county_votes_percent = county_votes / total_votes * 100
+   
+   ``` for county_name in votes_by_county:
+        # 6b: Retrieve the county vote count.
+        county_votes = votes_by_county.get(county_name)
+        # 6c: Calculate the percentage of votes for the county.
+        county_votes_percent = county_votes / total_votes * 100
 
          # 6d: Print the county results to the terminal.
         county_results = (f"{county_name}: {county_votes_percent:.1f}% ({county_votes:,})\n")
@@ -30,9 +32,10 @@ This is not a vote counting machine, but instead takes the data from voting mach
          # 6e: Save the county votes to a text file.
         txt_file.write(county_results)
          # 6f: Write an if statement to determine the winning county and get its vote count.
-        if (county_votes > largest_count):
+         if (county_votes > largest_count):
             largest_count = county_votes
             largest_turnout = county_name
+            ```
 
 * Individual Candidate Results: 
     * Charles Casper Stockham: 23.0% (85,213)
@@ -40,7 +43,7 @@ This is not a vote counting machine, but instead takes the data from voting mach
     * Raymon Anthony Doane: 3.1% (11,606)
 * Winning Candidate: Diana DeGette with 73.8% of the vote, which is 272,892 votes.
 
-    ` for candidate_name in candidate_votes:
+    ``` for candidate_name in candidate_votes:
 
         # Retrieve vote count and percentage
         votes = candidate_votes.get(candidate_name)
@@ -59,6 +62,7 @@ This is not a vote counting machine, but instead takes the data from voting mach
             winning_count = votes
             winning_candidate = candidate_name
             winning_percentage = vote_percentage
+            ```
 
 ## Election Audit Summary - Repurposing the Code
 This code is perfect to run as a check of election results. By just supplying a csv file of the election results - in the same format that this congressional district is already use to - this code will breakdown the results by candidate and county in one click. As long as you have a computer that can run python, this audit takes just a few moments. 
