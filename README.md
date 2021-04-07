@@ -1,8 +1,8 @@
-# Election-Analysis
+# Election Analysis
 ## Purpose
 This purpose of creating this code is to provide an audit of election results. 
 The election it was created for was a congressional race in Colorado, but this code should be resuable for elections of all size and across the country.
-This is not a vote counting machine, but instead takes the data from voting machiens and double checks the results. 
+This is not a vote counting machine, but instead takes the data from voting machines and double checks the results. 
 ## Election Audit Results
 * Total Votes Cast: 369,711
   * `# Initialize a total vote counter.`
