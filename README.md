@@ -6,12 +6,12 @@ This is not a vote counting machine, but instead takes the data from voting mach
 ## Election Audit Results
 * Total Votes Cast: 369,711
   
-  `# Initialize a total vote counter.`
-    `total_votes = 0`
-    `# For each row in the CSV file.`
-    `for row in reader:`
-        `# Add to the total vote count`
-        `total_votes = total_votes + 1`
+  ```# Initialize a total vote counter.
+    total_votes = 0
+    # For each row in the CSV file.
+    for row in reader:
+        # Add to the total vote count
+        total_votes = total_votes + 1
 
 * Votes by County: 
   * County Votes:
@@ -35,7 +35,7 @@ This is not a vote counting machine, but instead takes the data from voting mach
          if (county_votes > largest_count):
             largest_count = county_votes
             largest_turnout = county_name
-            ```
+            
 
 * Individual Candidate Results: 
     * Charles Casper Stockham: 23.0% (85,213)
@@ -62,7 +62,7 @@ This is not a vote counting machine, but instead takes the data from voting mach
             winning_count = votes
             winning_candidate = candidate_name
             winning_percentage = vote_percentage
-            ```
+            
 
 ## Election Audit Summary - Repurposing the Code
 This code is perfect to run as a check of election results. By just supplying a csv file of the election results - in the same format that this congressional district is already use to - this code will breakdown the results by candidate and county in one click. As long as you have a computer that can run python, this audit takes just a few moments. 
